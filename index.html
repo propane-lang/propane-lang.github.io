@@ -10,6 +10,7 @@
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
+    <link href="css/code-snippets.css" rel="stylesheet">
     <link href="css/scrolling-nav.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
@@ -105,6 +106,11 @@
             <div class="page-header">
               <h1>Overview</h1>
             </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 col-lg-offset-1">
             <p>Overview here</p>
             <ul>
               <li><b>foo</b> bar</li>
@@ -117,6 +123,27 @@
             <h3>Related Projects</h3>
             <p>Methane here?</p>
             <ul></ul>
+          </div>
+          <div class="col-lg-5">
+            <div class="panel panel-default">
+              <div class="panel-heading">Example:</div>
+              <div class="panel-body code-snippet">
+
+                <pre>
+<span class="syntax-comment"># Define our function</span>
+<span class="syntax-keyword">define</span> Customer = {as101, as102, as103}
+<span class="syntax-keyword">define</span> Peer = Sprint + ATT
+<span class="syntax-keyword">define</span> Routing = {
+    <span class="syntax-asn">true</span> => Customer >> Peer
+}
+<span class="syntax-keyword">define</span> NoTransit = {
+    <span class="syntax-asn">true</span> => !transit(Peer,Peer)
+}
+<span class="syntax-keyword">define</span> Main = Routing & NoTransit
+                </pre>
+
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -247,6 +274,10 @@
     </footer>
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
+    <!-- Include jQuery Syntax Highlighter -->
+    <script type="text/javascript" src="http://balupton.github.com/jquery-syntaxhighlighter/scripts/jquery.syntaxhighlighter.min.js"></script>
+    <!-- Initialise jQuery Syntax Highlighter -->
+    <script type="text/javascript">$.SyntaxHighlighter.init();</script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
     <!-- Scrolling Nav JavaScript -->
