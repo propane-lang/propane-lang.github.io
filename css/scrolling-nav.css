@@ -1,0 +1,80 @@
+/*!
+ * Start Bootstrap - Scrolling Nav HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+body {
+    width: 100%;
+    height: 100%;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+@media(min-width:767px) {
+    .navbar {
+        padding: 20px 0;
+        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        transition: background .5s ease-in-out,padding .5s ease-in-out;
+    }
+
+    .top-nav-collapse {
+        padding: 0;
+    }
+}
+
+
+/* Sections */
+.even-section {
+    font-size: 16px;
+    padding-top: 50px;
+    padding-bottom: 70px;
+    background: #fff;
+}
+
+.odd-section {
+    font-size: 16px;
+    padding-top: 50px;
+    padding-bottom: 70px;
+    background: #eee;
+}
+
+#intro {
+    text-align: center;
+    padding-top: 150px;
+    padding-bottom: 0px;
+}
+
+#intro .jumbotron {
+    background-color: white;
+}
+
+.page-header {
+    margin-top: 0px;
+}
+
+.even-section .page-header {
+    border-bottom: 1px solid #ddd;
+}
+
+.odd-section .page-header {
+    border-bottom: 1px solid #ccc;
+}
+
+#footer {
+    text-align: center;
+}
+
+#footer a {
+    color: #666;
+}
+
+#footer a:hover {
+    text-decoration: none;
+    color: #222;
+}
