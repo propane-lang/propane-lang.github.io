@@ -30,6 +30,13 @@ html {
 
 
 /* Sections */
+.foo-section {
+    font-size: 16px;
+    padding-top: 50px;
+    padding-bottom: 70px;
+    background: #a4e8db;
+}
+
 .even-section {
     font-size: 16px;
     padding-top: 50px;
