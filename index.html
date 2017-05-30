@@ -76,7 +76,7 @@
               <p>a language for simple, <span style="color: #ff0000">correct-by-construction</span> network configuration</p>
               <ul class="list-inline">
                 <li>
-                  <a class="btn btn-lg btn-primary" href="https://github.com/rabeckett/propane/" target="_blank">
+                  <a class="btn btn-lg btn-primary" href="http://www.cs.princeton.edu/~rbeckett/Propane/Installation.html" target="_blank">
                   Tutorial »
                   </a>
                 </li>
@@ -103,34 +103,48 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-5 col-lg-offset-1">
-            <p>Overview here</p>
+            <p>Propane is a new language for configuring the network. 
+              It lets you write a single, high-level routing policy for 
+              your network. The Propane compiler can then generate a 
+              collection of legacy vendor configurations that are 
+              guaranteed to implement the policy correctly. The language 
+              and compiler provide the following features and guarantees:
+            </p>
+            <h3>Language and Compiler Guarantees</h3>
             <ul>
-              <li><b>foo</b> bar</li>
-              <li><b>foo</b> bar</li>
-              <li><b>foo</b> bar</li>
-              <li><b>foo</b> bar</li>
+              <li>The language lets your write routing policy as if you alway have <b>centralized visibilty</b> of the network</li>
+              &nbsp
+              <li>The compiler performs <b>static analysis</b> of the routing policy to proactively find potential issues.</li>
+              &nbsp
+              <li>The Propane compiler generates a collection of configurations that run the 
+                <b>distributed</b> BGP routing protocol. There is no centralized coordination</li>
+              &nbsp
+              <li>The BGP configurations are guaranteed to correctly adapt to <b>all possible failures</b> so that 
+                the most preferred paths are always used when available.</li>
+              &nbsp
             </ul>
-            <h3>Subtitle</h3>
-            <p>More text here</p>
-            <h3>Related Projects</h3>
-            <p>Methane here?</p>
-            <ul></ul>
           </div>
           <div class="col-lg-5">
             <div class="panel panel-default raise-effect">
-              <div class="panel-heading">Example:</div>
+              <div class="panel-heading">Example Propane Policy:</div>
               <div class="panel-body code-snippet">
 
                 <pre>
 <span class="syntax-comment"># Define our function</span>
 <span class="syntax-keyword">define</span> Customer = {as101, as102, as103}
-<span class="syntax-keyword">define</span> Peer = Sprint + ATT
+<span class="syntax-keyword">define</span> Peer = {Sprint, ATT}
+
 <span class="syntax-keyword">define</span> Routing = {
-    <span class="syntax-asn">true</span> => Customer >> Peer
+    true => <span class="syntax-asn">exit</span>(Customer >> Peer)
 }
+
+<span class="syntax-keyword">define</span> transit(X,Y) = 
+  <span class="syntax-asn">enter</span>(X or Y) & <span class="syntax-asn">exit</span>(X or Y)
+
 <span class="syntax-keyword">define</span> NoTransit = {
-    <span class="syntax-asn">true</span> => !transit(Peer,Peer)
+    true => not transit(Peer,Peer)
 }
+
 <span class="syntax-keyword">define</span> Main = Routing & NoTransit
                 </pre>
 
@@ -192,12 +206,6 @@
                 [&nbsp;<a href="https://ratul.org/papers/sigcomm2016-propane.pdf">paper</a> | 
                        <a href="http://conferences.sigcomm.org/sigcomm/2016/files/program/sigcomm/Session06-Paper03-DontMind-Ryan-Slides.pdf">slides</a>]
               </p>
-            </div>
-            <h2>Technical Reports</h2>
-            <div>
-            </div>
-            <h2>Theses</h2>
-            <div>
             </div>
           </div>
         </div>
